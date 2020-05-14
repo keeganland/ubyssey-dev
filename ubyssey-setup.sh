@@ -14,7 +14,7 @@ apt-get install -y npm
 
 #set up the Ubyssey Theme's static directory
 #the "yarn install" and "gulp" commands were being done in another container before, for some reason
-cd /ubyssey.ca/ubyssey/static/
+cd /home/ubyssey.ca/ubyssey/static/
 npm install
 npm install -g gulp
 npm install -g gulp-cli
