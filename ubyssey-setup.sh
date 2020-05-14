@@ -20,8 +20,8 @@ npm install -g gulp
 npm install -g gulp-cli
 npm rebuild node-sass
 gulp buildDev
-yarn install
-gulp
+#yarn install
+#gulp
 
 #set up dispatch
 #the "yarn install" and "yarn start" commands were being done by starting another container before, for some reason
@@ -31,8 +31,8 @@ python setup.py develop
 cd /home/dispatch/dispatch/static/manager
 npm install -g yarn
 yarn setup
-yarn install
-yarn start
+#yarn install
+#yarn start
 
 #start server
 python /home/ubyssey.ca/manage.py runserver 0.0.0.0:8000
