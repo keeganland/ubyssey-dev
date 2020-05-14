@@ -11,6 +11,8 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: ubyssey
       MYSQL_DATABASE: ubyssey
+    ports:
+      - "3307:3306"
     healthcheck:
       test: "/usr/bin/mysql --user=root --password=ubyssey --execute \"SHOW DATABASES;\""
       interval: 2s
