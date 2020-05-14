@@ -37,4 +37,4 @@ cp -r ubyssey.ca/_settings/settings-local.py ubyssey.ca/ubyssey/settings.py
 #cd ..
 #cd ..
 #cd ubyssey.ca
-python manage.py runserver 0.0.0.0:8000
+python /home/ubyssey.ca/manage.py runserver 0.0.0.0:8000
