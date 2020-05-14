@@ -1,17 +1,5 @@
 #!/bin/bash
 
-# Create a virtualenv. These steps will not be necessary on a docker container
-virtualenv ubyssey-dev
-source ubyssey-dev/bin/activate
-
-# clone the git repos
-cd ubyssey-dev
-git clone https://github.com/keeganland/ubyssey.ca.git/
-git clone https://github.com/keeganland/dispatch.git/
-
-# move the Docker settings to ubyssey-dev root
-cp -r ./ubyssey.ca/local-dev/. .
-
 # tell Django to use the settings-local file for 
 # TODO make this conditional
 cp -r ubyssey.ca/_settings/settings-local.py ubyssey.ca/ubyssey/settings.py
@@ -49,5 +37,4 @@ cp -r ubyssey.ca/_settings/settings-local.py ubyssey.ca/ubyssey/settings.py
 #cd ..
 #cd ..
 #cd ubyssey.ca
-#python manage.py runserver 0.0.0.0:8000
-
+python manage.py runserver 0.0.0.0:8000
