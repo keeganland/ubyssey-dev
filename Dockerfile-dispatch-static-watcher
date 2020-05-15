@@ -1,0 +1,7 @@
+FROM node:14.2.0-stretch
+
+WORKDIR /home/manager/
+RUN rm -rf node_modules \
+  && npm install -g yarn \
+  && yarn setup
+WORKDIR /home/

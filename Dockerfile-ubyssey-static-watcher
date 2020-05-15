@@ -1,0 +1,9 @@
+FROM node:14.2.0-stretch
+
+WORKDIR /home/
+RUN rm -rf node_modules 
+RUN npm install 
+RUN npm install gulp
+RUN npm install gulp-cli
+RUN npm rebuild node-sass
+RUN gulp buildDev
