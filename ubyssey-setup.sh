@@ -4,6 +4,11 @@
 # TODO make this conditional
 cp -r ubyssey.ca/_settings/settings-local.py ubyssey.ca/ubyssey/settings.py
 
+apt-get update
+apt-get install -y build-essential curl
+apt-get install -y nodejs
+apt-get install -y npm
+
 #set up the Ubyssey Theme's static directory
 #the "yarn install" and "gulp" commands were being done in another container before, for some reason
 cd /home/ubyssey.ca/ubyssey/static/
@@ -21,10 +26,6 @@ python setup.py develop
 cd /home/dispatch/dispatch/static/manager
 npm install -g yarn
 yarn setup
-
-# database migrations 
-cd /home/ubyssey.ca/
-python manage.py migrate
 
 #start server
 python /home/ubyssey.ca/manage.py runserver 0.0.0.0:8000
