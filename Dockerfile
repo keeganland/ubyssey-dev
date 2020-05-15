@@ -13,13 +13,13 @@ RUN apt-get update \
   && apt-get install -y vim
   
 # Clone the relevant repos
-RUN git clone https://github.com/keeganland/ubyssey-dev/ /workbench/
-RUN git clone https://github.com/keeganland/ubyssey.ca.git/ /workbench/ubyssey.ca/
-RUN git clone https://github.com/keeganland/dispatch.git/ /workbench/dispatch/
+RUN git clone https://github.com/keeganland/ubyssey-dev/ /workspace/
+RUN git clone https://github.com/keeganland/ubyssey.ca.git/ /workspace/ubyssey.ca/
+RUN git clone https://github.com/keeganland/dispatch.git/ /workspace/dispatch/
   
 # Set up the Ubyssey.ca Theme repo's dependencies on the container.
-RUN pip install -r /home/ubyssey.ca/requirements.txt
+RUN pip install -r /workspace/ubyssey.ca/requirements.txt
 
-WORKDIR /workbench/
+WORKDIR /workspace/
 
 ENTRYPOINT ["/home/ubyssey-dev/ubyssey-setup.sh"]
