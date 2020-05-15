@@ -2,7 +2,7 @@
 
 # tell Django to use the settings-local file for 
 # TODO make this conditional
-cp -r ubyssey.ca/_settings/settings-local.py ubyssey.ca/ubyssey/settings.py
+cp -r /workspace/ubyssey.ca/_settings/settings-local.py /workspace/ubyssey.ca/ubyssey/settings.py
 
 apt-get update
 apt-get install -y build-essential curl
