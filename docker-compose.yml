@@ -27,7 +27,8 @@ services:
       - "8000:8000"
       - "4444:4444"
     volumes:
-      - .:/home/
+      - dispatch_static:/home/dispatch/dispatch/static/
+      - ubyssey_static:/home/ubyssey.ca/ubyssey/static/
     depends_on:
       db:
         condition: service_healthy
@@ -35,6 +36,33 @@ services:
     stdin_open: true
     tty: true
 
+## Starts up static file watcher for ubyssey.ca
+  gulp:
+    build: 
+      context: .
+      dockerfile: Dockerfile-ubyssey-static-watcher
+    depends_on:
+      - "django"
+    volumes:
+      - ubyssey_static:/home/
+    #command: bash -c "yarn install && gulp"
+    command: bash -c "sleep 1000"
+    container_name: ubyssey-static
+    
+## Starts up static file watcher for dispatch/dispatch/static/
+#  yarn:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile-dispatch-static-watcher
+#    depends_on:
+#      - django
+#    volumes:
+#      - dispatch_static:/home/
+#    command: bash -c "cd /home/manager && yarn install && yarn start"
+#    container_name: dispatch-static
+
 
 volumes:
   data: {}
+  dispatch_static:
+  ubyssey_static:
