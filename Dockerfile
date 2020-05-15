@@ -20,6 +20,8 @@ RUN git clone https://github.com/keeganland/dispatch.git/ /workspace/dispatch/
 # Set up the Ubyssey.ca Theme repo's dependencies on the container.
 RUN pip install -r /workspace/ubyssey.ca/requirements.txt
 
-WORKDIR /workspace/
+# Run set-up script
+RUN bash /workspace/ubyssey-setup.sh
 
-ENTRYPOINT ["/workspace/ubyssey-setup.sh"]
+WORKDIR /workspace/
+ENTRYPOINT ["/workspace/ubyssey.ca/manage.py", "runserver", "0.0.0.0:8000"]

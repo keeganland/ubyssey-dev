@@ -26,6 +26,3 @@ python setup.py develop
 cd /workspace/dispatch/dispatch/static/manager
 npm install -g yarn
 yarn setup
-
-#start server
-python /workspace/ubyssey.ca/manage.py runserver 0.0.0.0:8000
