@@ -22,4 +22,4 @@ RUN pip install -r /workspace/ubyssey.ca/requirements.txt
 
 WORKDIR /workspace/
 
-ENTRYPOINT ["/home/ubyssey-dev/ubyssey-setup.sh"]
+ENTRYPOINT ["/workspace/ubyssey-dev/ubyssey-setup.sh"]
