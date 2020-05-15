@@ -22,5 +22,9 @@ cd /home/dispatch/dispatch/static/manager
 npm install -g yarn
 yarn setup
 
+# database migrations 
+cd /home/ubyssey.ca/
+python manage.py migrate
+
 #start server
 python /home/ubyssey.ca/manage.py runserver 0.0.0.0:8000
