@@ -19,8 +19,9 @@ RUN git clone https://github.com/keeganland/dispatch.git/ /workspaces/dispatch/
 # Set up the Ubyssey.ca Theme repo's dependencies on the container.
 RUN pip install -r /workspaces/ubyssey.ca/requirements.txt
 
-# Run set-up script
-#RUN bash /workspaces/ubyssey-setup.sh
+# Run set-up script (which is put in workspaces directory, because it needs to manipulate both Dispatch and Ubyssey repos)
+RUN cp -r /workspaces/ubyssey.ca/local-dev/ubyssey-setup.sh /workspaces/ubyssey-setup.sh
+RUN bash /workspaces/ubyssey-setup.sh
 RUN cp -r /workspaces/ubyssey.ca/_settings/settings-local.py /workspaces/ubyssey.ca/ubyssey/settings.py
 
 WORKDIR /workspaces/
