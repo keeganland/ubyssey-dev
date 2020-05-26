@@ -3,7 +3,7 @@ services:
 
 ## Starts up mySQL server for ubyssey.ca and Dispatch
   db:
-    image: mysql:5.7
+    image: keeganlandrigan/ubyssey-dev-db:0.0.1
     volumes:
       - data:/var/lib/mysql
     environment:
