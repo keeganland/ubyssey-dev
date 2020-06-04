@@ -22,7 +22,9 @@ services:
 
 ## Starts up Django server for ubyssey.ca and Dispatch
   django:
-    build: .
+    image: keeganlandrigan/dispatch-dev:0.0.1
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.development
     ports:
       - "8000:8000"
       - "4444:4444"
